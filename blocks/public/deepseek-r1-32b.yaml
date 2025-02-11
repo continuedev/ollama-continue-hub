@@ -1,11 +1,10 @@
 ---
 name: deepseek-r1 32b
-version: 0.0.1
+version: 0.0.5
 models:
 - name: deepseek-r1 32b
   provider: ollama
   model: deepseek-r1:32b
-  apiBase: ${{ inputs.OLLAMA_API_BASE }}
   roles:
     - chat
     - edit

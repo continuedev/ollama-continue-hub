@@ -1,11 +1,10 @@
 ---
 name: llama3.2 1b
-version: 0.0.1
+version: 0.0.5
 models:
 - name: llama3.2 1b
   provider: ollama
   model: llama3.2:1b
-  apiBase: ${{ inputs.OLLAMA_API_BASE }}
   roles:
     - chat
     - edit

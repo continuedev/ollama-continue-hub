@@ -1,10 +1,9 @@
 ---
 name: nomic-embed-text latest
-version: 0.0.1
+version: 0.0.5
 models:
 - name: nomic-embed-text latest
   provider: ollama
   model: nomic-embed-text:latest
-  apiBase: ${{ inputs.OLLAMA_API_BASE }}
   roles:
     - embed

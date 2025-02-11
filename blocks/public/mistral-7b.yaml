@@ -1,11 +1,10 @@
 ---
 name: mistral 7b
-version: 0.0.1
+version: 0.0.5
 models:
 - name: mistral 7b
   provider: ollama
   model: mistral:7b
-  apiBase: ${{ inputs.OLLAMA_API_BASE }}
   roles:
     - chat
     - edit
