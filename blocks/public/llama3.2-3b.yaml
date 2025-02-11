@@ -1,0 +1,12 @@
+---
+name: llama3.2 3b
+version: 0.0.1
+models:
+- name: llama3.2 3b
+  provider: ollama
+  model: llama3.2:3b
+  apiBase: ${{ inputs.OLLAMA_API_BASE }}
+  roles:
+    - chat
+    - edit
+    - apply

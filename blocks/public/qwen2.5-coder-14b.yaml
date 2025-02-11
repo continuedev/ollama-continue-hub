@@ -1,0 +1,12 @@
+---
+name: qwen2.5-coder 14b
+version: 0.0.1
+models:
+- name: qwen2.5-coder 14b
+  provider: ollama
+  model: qwen2.5-coder:14b
+  apiBase: ${{ inputs.OLLAMA_API_BASE }}
+  roles:
+    - chat
+    - edit
+    - apply

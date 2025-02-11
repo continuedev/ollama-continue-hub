@@ -1,0 +1,13 @@
+---
+name: deepseek-r1 1.5b
+version: 0.0.1
+models:
+- name: deepseek-r1 1.5b
+  provider: ollama
+  model: deepseek-r1:1.5b
+  apiBase: ${{ inputs.OLLAMA_API_BASE }}
+  roles:
+    - chat
+    - edit
+    - apply
+    - autocomplete
