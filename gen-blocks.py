@@ -57,7 +57,6 @@ models:
 - name: {model_name} {size}
   provider: ollama
   model: {model_name}:{size}
-  apiBase: ${{{{ inputs.OLLAMA_API_BASE }}}}
   roles:
 """
 
@@ -74,7 +73,7 @@ models:
 
 def main():
     parser = argparse.ArgumentParser(description="Generate YAML files for models.")
-    parser.add_argument('--version', default='0.0.1', help='Version string for the YAML files')
+    parser.add_argument('--version', default='0.0.5', help='Version string for the YAML files')
 
     args = parser.parse_args()
     create_yaml_files(models, args.version)
