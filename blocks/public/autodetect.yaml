@@ -1,0 +1,12 @@
+---
+name: autodetect
+version: 0.0.5
+models:
+- name: autodetect
+  provider: ollama
+  model: autodetect
+  roles:
+    - chat
+    - edit
+    - apply
+    - autocomplete
