@@ -4,6 +4,8 @@ import os
 import logging
 import argparse
 
+DEFAULT_VERSION = "1.0.0"
+
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -73,7 +75,7 @@ models:
 
 def main():
     parser = argparse.ArgumentParser(description="Generate YAML files for models.")
-    parser.add_argument('--version', default='0.0.5', help='Version string for the YAML files')
+    parser.add_argument('--version', default=DEFAULT_VERSION, help='Version string for the YAML files')
 
     args = parser.parse_args()
     create_yaml_files(models, args.version)
