@@ -53,17 +53,16 @@ def create_yaml_files(models, version):
     for model_name, model_attributes in models.items():
         for size, supported_roles in model_attributes.items():
             yaml_content = f"""---
-name: {model_name} {size}
+name: {model_name.lower()} {size.lower()}
 version: {version}
 models:
-- name: {model_name} {size}
+- name: {model_name.lower()} {size.lower()}
   provider: ollama
-  model: {model_name}:{size}
-  roles:
-"""
+  model: {model_name.lower()}:{size.lower()}
+  roles:\n"""
 
             for role in supported_roles:
-                yaml_content += f"    - {role}\n"
+                yaml_content += f"    - {role.lower()}\n"
 
             file_path = os.path.join(base_path, f"{model_name}-{size}.yaml")
             try:
