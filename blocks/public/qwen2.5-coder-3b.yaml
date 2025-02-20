@@ -1,6 +1,6 @@
 ---
 name: qwen2.5-coder 3b
-version: 0.0.5
+version: 1.0.0
 models:
 - name: qwen2.5-coder 3b
   provider: ollama

@@ -1,6 +1,6 @@
 ---
 name: mistral 7b
-version: 0.0.5
+version: 1.0.0
 models:
 - name: mistral 7b
   provider: ollama
