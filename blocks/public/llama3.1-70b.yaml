@@ -1,6 +1,7 @@
 ---
 name: llama3.1 70b
 version: 1.0.0
+schema: v1
 models:
 - name: llama3.1 70b
   provider: ollama

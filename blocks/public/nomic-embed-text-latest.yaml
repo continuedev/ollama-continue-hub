@@ -1,6 +1,7 @@
 ---
 name: nomic-embed-text latest
 version: 1.0.0
+schema: v1
 models:
 - name: nomic-embed-text latest
   provider: ollama

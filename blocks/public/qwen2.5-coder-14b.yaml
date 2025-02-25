@@ -1,6 +1,7 @@
 ---
 name: qwen2.5-coder 14b
 version: 1.0.0
+schema: v1
 models:
 - name: qwen2.5-coder 14b
   provider: ollama

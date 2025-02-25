@@ -1,6 +1,7 @@
 ---
 name: autodetect
 version: 0.0.5
+schema: v1
 models:
 - name: autodetect
   provider: ollama

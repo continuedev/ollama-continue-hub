@@ -1,6 +1,7 @@
 ---
 name: deepseek-r1 1.5b
 version: 1.0.0
+schema: v1
 models:
 - name: deepseek-r1 1.5b
   provider: ollama
