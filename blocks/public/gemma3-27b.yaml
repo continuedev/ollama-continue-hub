@@ -1,11 +1,11 @@
 ---
-name: deepseek-r1 8b
-version: 1.0.0
+name: gemma3 27B
+version: 1.0.5
 schema: v1
 models:
-- name: deepseek-r1 8b
+- name: gemma3 27B
   provider: ollama
-  model: deepseek-r1:8b
+  model: gemma3:27B
   roles:
     - chat
     - edit

@@ -1,12 +1,13 @@
 ---
-name: deepseek-r1 8b
-version: 1.0.0
+name: gemma 2B
+version: 1.0.5
 schema: v1
 models:
-- name: deepseek-r1 8b
+- name: gemma 2B
   provider: ollama
-  model: deepseek-r1:8b
+  model: gemma:2B
   roles:
     - chat
     - edit
     - apply
+    - autocomplete

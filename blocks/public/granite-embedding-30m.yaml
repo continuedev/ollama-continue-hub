@@ -1,0 +1,10 @@
+---
+name: granite-embedding 30m
+version: 1.0.5
+schema: v1
+models:
+- name: granite-embedding 30m
+  provider: ollama
+  model: granite-embedding:30m
+  roles:
+    - embed

@@ -78,6 +78,7 @@ def create_yaml_files(models, version):
             yaml_content = f"""---
 name: {model_name.lower()} {size.lower()}
 version: {version}
+schema: v1
 models:
 - name: {model_name.lower()} {size.lower()}
   provider: ollama

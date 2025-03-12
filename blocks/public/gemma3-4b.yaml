@@ -1,0 +1,13 @@
+---
+name: gemma3 4B
+version: 1.0.5
+schema: v1
+models:
+- name: gemma3 4B
+  provider: ollama
+  model: gemma3:4B
+  roles:
+    - chat
+    - edit
+    - apply
+    - autocomplete

@@ -1,0 +1,13 @@
+---
+name: codegemma 2B
+version: 1.0.5
+schema: v1
+models:
+- name: codegemma 2B
+  provider: ollama
+  model: codegemma:2B
+  roles:
+    - chat
+    - edit
+    - apply
+    - autocomplete

@@ -1,0 +1,13 @@
+---
+name: gemma3 1B
+version: 1.0.5
+schema: v1
+models:
+- name: gemma3 1B
+  provider: ollama
+  model: gemma3:1B
+  roles:
+    - chat
+    - edit
+    - apply
+    - autocomplete

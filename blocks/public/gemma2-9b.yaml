@@ -1,0 +1,13 @@
+---
+name: gemma2 9B
+version: 1.0.5
+schema: v1
+models:
+- name: gemma2 9B
+  provider: ollama
+  model: gemma2:9B
+  roles:
+    - chat
+    - edit
+    - apply
+    - autocomplete
