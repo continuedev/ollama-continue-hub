@@ -4,19 +4,42 @@ import os
 import logging
 import argparse
 
-DEFAULT_VERSION = "1.0.0"
+DEFAULT_VERSION = "1.0.5"
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Define the models and their capabilities
 models = {
+    "gemma": {
+        "2B": ["chat", "edit", "apply", "autocomplete"],
+        "7b": ["chat", "edit", "apply", "autocomplete"]
+    },
+    "gemma2": {
+        "2B": ["chat", "edit", "apply", "autocomplete"],
+        "9B": ["chat", "edit", "apply", "autocomplete"],
+        "27B": ["chat", "edit", "apply"]
+    },
+    "gemma3": {
+        "1B": ["chat", "edit", "apply", "autocomplete"],
+        "4B": ["chat", "edit", "apply", "autocomplete"],
+        "12B": ["chat", "edit", "apply"],
+        "27B": ["chat", "edit", "apply"]
+    },
+    "codegemma": {
+        "2B": ["chat", "edit", "apply", "autocomplete"],
+        "7b": ["chat", "edit", "apply", "autocomplete"]
+    },
     "deepseek-r1": {
-        "1.5b": ["chat", "edit", "apply", "autocomplete"],
-        "7b": ["chat", "edit", "apply", "autocomplete"],
-        "8b": ["chat", "edit", "apply", "autocomplete"],
+        "1.5b": ["chat", "edit", "apply"],
+        "7b": ["chat", "edit", "apply"],
+        "8b": ["chat", "edit", "apply"],
         "14b": ["chat", "edit", "apply"],
         "32b": ["chat", "edit", "apply"]
+    },
+    "granite-embedding": {
+        "30m": ["embed"],
+        "278m": ["embed"]
     },
     "nomic-embed-text": {
         "latest": ["embed"]
@@ -64,7 +87,7 @@ models:
             for role in supported_roles:
                 yaml_content += f"    - {role.lower()}\n"
 
-            file_path = os.path.join(base_path, f"{model_name}-{size}.yaml")
+            file_path = os.path.join(base_path, f"{model_name.lower()}-{size.lower()}.yaml")
             try:
                 with open(file_path, 'w') as file:
                     file.write(yaml_content)
