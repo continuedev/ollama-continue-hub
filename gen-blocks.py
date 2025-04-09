@@ -30,6 +30,10 @@ models = {
         "2B": ["chat", "edit", "apply", "autocomplete"],
         "7b": ["chat", "edit", "apply", "autocomplete"]
     },
+    "deepcode": {
+        "1.5B": ["chat", "edit", "apply"],
+        "14B": ["chat", "edit", "apply"]
+    },
     "deepseek-r1": {
         "1.5b": ["chat", "edit", "apply"],
         "7b": ["chat", "edit", "apply"],
