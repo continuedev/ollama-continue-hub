@@ -1,0 +1,12 @@
+---
+name: qwen3 32b
+version: 1.0.5
+schema: v1
+models:
+- name: qwen3 32b
+  provider: ollama
+  model: qwen3:32b
+  roles:
+    - chat
+    - edit
+    - apply

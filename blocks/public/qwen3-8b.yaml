@@ -1,0 +1,13 @@
+---
+name: qwen3 8b
+version: 1.0.5
+schema: v1
+models:
+- name: qwen3 8b
+  provider: ollama
+  model: qwen3:8b
+  roles:
+    - chat
+    - edit
+    - apply
+    - autocomplete

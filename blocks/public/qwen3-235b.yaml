@@ -1,0 +1,12 @@
+---
+name: qwen3 235b
+version: 1.0.5
+schema: v1
+models:
+- name: qwen3 235b
+  provider: ollama
+  model: qwen3:235b
+  roles:
+    - chat
+    - edit
+    - apply
