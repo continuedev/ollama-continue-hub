@@ -15,6 +15,16 @@ models = {
         "2B": ["chat", "edit", "apply", "autocomplete"],
         "7b": ["chat", "edit", "apply", "autocomplete"]
     },
+    "qwen3": {
+        "0.6B": ["chat", "edit", "apply", "autocomplete"],
+        "1.7B": ["chat", "edit", "apply", "autocomplete"],
+        "4B": ["chat", "edit", "apply", "autocomplete"],
+        "8B": ["chat", "edit", "apply", "autocomplete"],
+        "14B": ["chat", "edit", "apply"],
+        "30B": ["chat", "edit", "apply"],
+        "32B": ["chat", "edit", "apply"],
+        "235B": ["chat", "edit", "apply"],
+    },
     "gemma2": {
         "2B": ["chat", "edit", "apply", "autocomplete"],
         "9B": ["chat", "edit", "apply", "autocomplete"],
@@ -68,7 +78,7 @@ models = {
     },
 }
 
-def create_yaml_files(models, version):
+def create_yaml_files(models, version, family=None):
     base_path = './blocks/public'
 
     # Create the directory if it doesn't exist
@@ -77,7 +87,15 @@ def create_yaml_files(models, version):
     except FileExistsError:
         pass
 
-    for model_name, model_attributes in models.items():
+    # Filter models by family if specified
+    if family:
+        if family not in models:
+            logging.error(f"Family '{family}' not found in models dictionary.")
+            return
+        models_to_process = {family: models[family]}
+    else:
+        models_to_process = models
+    for model_name, model_attributes in models_to_process.items():
         for size, supported_roles in model_attributes.items():
             yaml_content = f"""---
 name: {model_name.lower()} {size.lower()}
@@ -103,9 +121,10 @@ models:
 def main():
     parser = argparse.ArgumentParser(description="Generate YAML files for models.")
     parser.add_argument('--version', default=DEFAULT_VERSION, help='Version string for the YAML files')
+    parser.add_argument('--family', help='Only generate YAML files for a specific model family')
 
     args = parser.parse_args()
-    create_yaml_files(models, args.version)
+    create_yaml_files(models, args.version, args.family)
 
 if __name__ == "__main__":
     main()
