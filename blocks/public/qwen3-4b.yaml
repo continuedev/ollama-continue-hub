@@ -1,13 +1,18 @@
 ---
 name: qwen3 4b
-version: 1.0.5
+version: 1.0.6
 schema: v1
 models:
-- name: qwen3 4b
-  provider: ollama
-  model: qwen3:4b
-  roles:
-    - chat
-    - edit
-    - apply
-    - autocomplete
+  - name: qwen3 4b
+    provider: ollama
+    model: qwen3:4b
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+    defaultCompletionOptions:
+      contextLength: 40_960
+      maxTokens: 32_768
+    capabilities:
+      - tool_use

@@ -1,12 +1,15 @@
 ---
 name: deepseek-r1 7b
-version: 1.0.0
+version: 1.0.1
 schema: v1
 models:
-- name: deepseek-r1 7b
-  provider: ollama
-  model: deepseek-r1:7b
-  roles:
-    - chat
-    - edit
-    - apply
+  - name: deepseek-r1 7b
+    provider: ollama
+    model: deepseek-r1:7b
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 128_000
+      maxTokens: 32_768

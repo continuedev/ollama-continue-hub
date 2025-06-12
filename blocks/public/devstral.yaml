@@ -1,6 +1,6 @@
 ---
 name: devstral
-version: 1.0.0
+version: 1.0.1
 schema: v1
 models:
   - name: devstral
@@ -12,5 +12,5 @@ models:
       - apply
     capabilities:
       - tool_use
-    chat:
-      baseSystemMessage: ""
+    defaultCompletionOptions:
+      contextLength: 128_000
