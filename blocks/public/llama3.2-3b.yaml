@@ -13,4 +13,4 @@ models:
     capabilities:
       - tool_use
     defaultCompletionOptions:
-      contextLength: 128_000
+      contextLength: 128000

@@ -12,7 +12,7 @@ models:
       - apply
       - autocomplete
     defaultCompletionOptions:
-      contextLength: 40_960
-      maxTokens: 32_768
+      contextLength: 40960
+      maxTokens: 32768
     capabilities:
       - tool_use

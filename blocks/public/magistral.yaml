@@ -11,5 +11,5 @@ models:
       - edit
       - apply
     defaultCompletionOptions:
-      contextLength: 40_960 # https://ollama.com/library/magistral recommends setting this to 40k not 128k
-      maxTokens: 8_192
+      contextLength: 40960 # https://ollama.com/library/magistral recommends setting this to 40k not 128k
+      maxTokens: 8192

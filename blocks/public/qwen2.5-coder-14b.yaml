@@ -11,5 +11,5 @@ models:
       - edit
       - apply
     defaultCompletionOptions:
-      contextLength: 32_768
+      contextLength: 32768
       maxTokens: 8192

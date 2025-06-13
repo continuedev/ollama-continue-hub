@@ -13,5 +13,5 @@ models:
     capabilities:
       - tool_use
     defaultCompletionOptions:
-      contextLength: 32_768
-      maxTokens: 8_192
+      contextLength: 32768
+      maxTokens: 8192
