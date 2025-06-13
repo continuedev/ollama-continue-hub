@@ -1,13 +1,16 @@
 ---
 name: qwen2.5-coder 3b
-version: 1.0.0
+version: 1.0.1
 schema: v1
 models:
-- name: qwen2.5-coder 3b
-  provider: ollama
-  model: qwen2.5-coder:3b
-  roles:
-    - chat
-    - edit
-    - apply
-    - autocomplete
+  - name: qwen2.5-coder 3b
+    provider: ollama
+    model: qwen2.5-coder:3b
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+    defaultCompletionOptions:
+      contextLength: 32768
+      maxTokens: 8192
