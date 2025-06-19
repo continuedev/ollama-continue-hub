@@ -1,10 +1,12 @@
 ---
 name: granite-embedding 278m
-version: 1.0.5
+version: 1.0.7
 schema: v1
 models:
-- name: granite-embedding 278m
-  provider: ollama
-  model: granite-embedding:278m
-  roles:
-    - embed
+  - name: granite-embedding 278m
+    provider: ollama
+    model: granite-embedding:278m
+    roles:
+      - embed
+    embedOptions:
+      maxChunkSize: 512
