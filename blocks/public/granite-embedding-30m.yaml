@@ -1,10 +1,12 @@
 ---
 name: granite-embedding 30m
-version: 1.0.5
+version: 1.0.6
 schema: v1
 models:
-- name: granite-embedding 30m
-  provider: ollama
-  model: granite-embedding:30m
-  roles:
-    - embed
+  - name: granite-embedding 30m
+    provider: ollama
+    model: granite-embedding:30m
+    embedOptions:
+      maxChunkSize: 512
+    roles:
+      - embed
