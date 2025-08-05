@@ -76,6 +76,10 @@ models = {
         "14b": ["chat", "edit", "apply"],
         "32b": ["chat", "edit", "apply"]
     },
+    "gpt-oss": {
+        "20b": ["chat", "edit", "apply"],
+        "120b": ["chat", "edit", "apply"]
+    }
 }
 
 def create_yaml_files(models, version, family=None):
