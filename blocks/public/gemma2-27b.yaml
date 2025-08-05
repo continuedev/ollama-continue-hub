@@ -1,14 +1,12 @@
 ---
-name: gemma2 27B
-version: 1.0.6
+name: gemma2 27b
+version: 1.0.5
 schema: v1
 models:
-  - name: gemma2 27B
-    provider: ollama
-    model: gemma2:27B
-    roles:
-      - chat
-      - edit
-      - apply
-    defaultCompletionOptions:
-      contextLength: 8192
+- name: gemma2 27b
+  provider: ollama
+  model: gemma2:27b
+  roles:
+    - chat
+    - edit
+    - apply

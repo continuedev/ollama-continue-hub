@@ -1,16 +1,12 @@
 ---
-name: gemma3 12B
-version: 1.0.6
+name: gemma3 12b
+version: 1.0.5
 schema: v1
 models:
-  - name: gemma3 12B
-    provider: ollama
-    model: gemma3:12B
-    roles:
-      - chat
-      - edit
-      - apply
-    capabilities:
-      - image_input
-    defaultCompletionOptions:
-      contextLength: 128000
+- name: gemma3 12b
+  provider: ollama
+  model: gemma3:12b
+  roles:
+    - chat
+    - edit
+    - apply

@@ -1,15 +1,12 @@
 ---
 name: deepcode 14b
-version: 1.0.6
+version: 1.0.5
 schema: v1
 models:
-  - name: deepcode 14b
-    provider: ollama
-    model: deepcode:14b
-    roles:
-      - chat
-      - edit
-      - apply
-    defaultCompletionOptions:
-      contextLength: 128000
-      maxTokens: 32768
+- name: deepcode 14b
+  provider: ollama
+  model: deepcode:14b
+  roles:
+    - chat
+    - edit
+    - apply

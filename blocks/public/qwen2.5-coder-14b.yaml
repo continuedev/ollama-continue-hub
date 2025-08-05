@@ -1,15 +1,12 @@
 ---
 name: qwen2.5-coder 14b
-version: 1.0.1
+version: 1.0.5
 schema: v1
 models:
-  - name: qwen2.5-coder 14b
-    provider: ollama
-    model: qwen2.5-coder:14b
-    roles:
-      - chat
-      - edit
-      - apply
-    defaultCompletionOptions:
-      contextLength: 32768
-      maxTokens: 8192
+- name: qwen2.5-coder 14b
+  provider: ollama
+  model: qwen2.5-coder:14b
+  roles:
+    - chat
+    - edit
+    - apply

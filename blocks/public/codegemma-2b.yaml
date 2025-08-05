@@ -1,15 +1,13 @@
 ---
-name: codegemma 2B
-version: 1.0.6
+name: codegemma 2b
+version: 1.0.5
 schema: v1
 models:
-  - name: codegemma 2B
-    provider: ollama
-    model: codegemma:2B
-    roles:
-      - chat
-      - edit
-      - apply
-      - autocomplete
-    defaultCompletionOptions:
-      contextLength: 8192
+- name: codegemma 2b
+  provider: ollama
+  model: codegemma:2b
+  roles:
+    - chat
+    - edit
+    - apply
+    - autocomplete

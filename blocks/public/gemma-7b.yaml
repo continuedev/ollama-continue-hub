@@ -1,15 +1,13 @@
 ---
 name: gemma 7b
-version: 1.0.6
+version: 1.0.5
 schema: v1
 models:
-  - name: gemma 7b
-    provider: ollama
-    model: gemma:7b
-    roles:
-      - chat
-      - edit
-      - apply
-      - autocomplete
-    defaultCompletionOptions:
-      contextLength: 8192
+- name: gemma 7b
+  provider: ollama
+  model: gemma:7b
+  roles:
+    - chat
+    - edit
+    - apply
+    - autocomplete

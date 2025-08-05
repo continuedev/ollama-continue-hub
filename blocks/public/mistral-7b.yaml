@@ -1,17 +1,12 @@
 ---
 name: mistral 7b
-version: 1.0.1
+version: 1.0.5
 schema: v1
 models:
-  - name: mistral 7b
-    provider: ollama
-    model: mistral:7b
-    roles:
-      - chat
-      - edit
-      - apply
-    capabilities:
-      - tool_use
-    defaultCompletionOptions:
-      contextLength: 32768
-      maxTokens: 8192
+- name: mistral 7b
+  provider: ollama
+  model: mistral:7b
+  roles:
+    - chat
+    - edit
+    - apply

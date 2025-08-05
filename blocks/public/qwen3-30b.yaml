@@ -1,17 +1,12 @@
 ---
 name: qwen3 30b
-version: 1.0.6
+version: 1.0.5
 schema: v1
 models:
-  - name: qwen3 30b
-    provider: ollama
-    model: qwen3:30b
-    roles:
-      - chat
-      - edit
-      - apply
-    defaultCompletionOptions:
-      contextLength: 40960
-      maxTokens: 32768
-    capabilities:
-      - tool_use
+- name: qwen3 30b
+  provider: ollama
+  model: qwen3:30b
+  roles:
+    - chat
+    - edit
+    - apply

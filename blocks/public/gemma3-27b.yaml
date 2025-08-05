@@ -1,16 +1,12 @@
 ---
-name: gemma3 27B
-version: 1.0.6
+name: gemma3 27b
+version: 1.0.5
 schema: v1
 models:
-  - name: gemma3 27B
-    provider: ollama
-    model: gemma3:27B
-    roles:
-      - chat
-      - edit
-      - apply
-    capabilities:
-      - image_input
-    defaultCompletionOptions:
-      contextLength: 128000
+- name: gemma3 27b
+  provider: ollama
+  model: gemma3:27b
+  roles:
+    - chat
+    - edit
+    - apply

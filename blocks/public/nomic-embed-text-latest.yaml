@@ -1,12 +1,10 @@
 ---
 name: nomic-embed-text latest
-version: 1.0.1
+version: 1.0.5
 schema: v1
 models:
-  - name: nomic-embed-text latest
-    provider: ollama
-    model: nomic-embed-text:latest
-    embedOptions:
-      maxChunkSize: 8192
-    roles:
-      - embed
+- name: nomic-embed-text latest
+  provider: ollama
+  model: nomic-embed-text:latest
+  roles:
+    - embed
