@@ -1,0 +1,12 @@
+---
+name: gpt-oss 120b
+version: 1.0.5
+schema: v1
+models:
+- name: gpt-oss 120b
+  provider: ollama
+  model: gpt-oss:120b
+  roles:
+    - chat
+    - edit
+    - apply
