@@ -1,6 +1,6 @@
 ---
 name: llama3.1 8b
-version: 1.0.5
+version: 1.0.6
 schema: v1
 models:
 - name: llama3.1 8b
