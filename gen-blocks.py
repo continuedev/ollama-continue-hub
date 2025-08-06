@@ -4,7 +4,7 @@ import os
 import logging
 import argparse
 
-DEFAULT_VERSION = "1.0.5"
+DEFAULT_VERSION = "1.0.6"
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -12,73 +12,76 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Define the models and their capabilities
 models = {
     "gemma": {
-        "2B": ["chat", "edit", "apply", "autocomplete"],
-        "7b": ["chat", "edit", "apply", "autocomplete"]
+        "2B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "7b": {"roles": ["chat", "edit", "apply", "autocomplete"]}
     },
     "qwen3": {
-        "0.6B": ["chat", "edit", "apply", "autocomplete"],
-        "1.7B": ["chat", "edit", "apply", "autocomplete"],
-        "4B": ["chat", "edit", "apply", "autocomplete"],
-        "8B": ["chat", "edit", "apply", "autocomplete"],
-        "14B": ["chat", "edit", "apply"],
-        "30B": ["chat", "edit", "apply"],
-        "32B": ["chat", "edit", "apply"],
-        "235B": ["chat", "edit", "apply"],
+        "0.6B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "1.7B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "4B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "8B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "14B": {"roles": ["chat", "edit", "apply"]},
+        "30B": {"roles": ["chat", "edit", "apply"]},
+        "32B": {"roles": ["chat", "edit", "apply"]},
+        "235B": {"roles": ["chat", "edit", "apply"]},
+    },
+    "qwen3-coder": {
+        "30b": {"roles": ["chat", "edit", "apply"], "capabilities": ["tool_use"]}
     },
     "gemma2": {
-        "2B": ["chat", "edit", "apply", "autocomplete"],
-        "9B": ["chat", "edit", "apply", "autocomplete"],
-        "27B": ["chat", "edit", "apply"]
+        "2B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "9B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "27B": {"roles": ["chat", "edit", "apply"]}
     },
     "gemma3": {
-        "1B": ["chat", "edit", "apply", "autocomplete"],
-        "4B": ["chat", "edit", "apply", "autocomplete"],
-        "12B": ["chat", "edit", "apply"],
-        "27B": ["chat", "edit", "apply"]
+        "1B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "4B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "12B": {"roles": ["chat", "edit", "apply"]},
+        "27B": {"roles": ["chat", "edit", "apply"]}
     },
     "codegemma": {
-        "2B": ["chat", "edit", "apply", "autocomplete"],
-        "7b": ["chat", "edit", "apply", "autocomplete"]
+        "2B": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "7b": {"roles": ["chat", "edit", "apply", "autocomplete"]}
     },
     "deepcode": {
-        "1.5B": ["chat", "edit", "apply"],
-        "14B": ["chat", "edit", "apply"]
+        "1.5B": {"roles": ["chat", "edit", "apply"]},
+        "14B": {"roles": ["chat", "edit", "apply"]}
     },
     "deepseek-r1": {
-        "1.5b": ["chat", "edit", "apply"],
-        "7b": ["chat", "edit", "apply"],
-        "8b": ["chat", "edit", "apply"],
-        "14b": ["chat", "edit", "apply"],
-        "32b": ["chat", "edit", "apply"]
+        "1.5b": {"roles": ["chat", "edit", "apply"]},
+        "7b": {"roles": ["chat", "edit", "apply"]},
+        "8b": {"roles": ["chat", "edit", "apply"]},
+        "14b": {"roles": ["chat", "edit", "apply"]},
+        "32b": {"roles": ["chat", "edit", "apply"]}
     },
     "granite-embedding": {
-        "30m": ["embed"],
-        "278m": ["embed"]
+        "30m": {"roles": ["embed"]},
+        "278m": {"roles": ["embed"]}
     },
     "nomic-embed-text": {
-        "latest": ["embed"]
+        "latest": {"roles": ["embed"]}
     },
     "llama3.1": {
-        "8b": ["chat", "edit", "apply"],
-        "70b": ["chat", "edit", "apply"]
+        "8b": {"roles": ["chat", "edit", "apply"]},
+        "70b": {"roles": ["chat", "edit", "apply"]}
     },
     "llama3.2": {
-        "1b": ["chat", "edit", "apply"],
-        "3b": ["chat", "edit", "apply"]
+        "1b": {"roles": ["chat", "edit", "apply"]},
+        "3b": {"roles": ["chat", "edit", "apply"]}
     },
     "mistral": {
-        "7b": ["chat", "edit", "apply"],
+        "7b": {"roles": ["chat", "edit", "apply"]},
     },
     "qwen2.5-coder": {
-        "1.5b": ["chat", "edit", "apply", "autocomplete"],
-        "3b": ["chat", "edit", "apply", "autocomplete"],
-        "7b": ["chat", "edit", "apply", "autocomplete"],
-        "14b": ["chat", "edit", "apply"],
-        "32b": ["chat", "edit", "apply"]
+        "1.5b": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "3b": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "7b": {"roles": ["chat", "edit", "apply", "autocomplete"]},
+        "14b": {"roles": ["chat", "edit", "apply"]},
+        "32b": {"roles": ["chat", "edit", "apply"]}
     },
     "gpt-oss": {
-        "20b": ["chat", "edit", "apply"],
-        "120b": ["chat", "edit", "apply"]
+        "20b": {"roles": ["chat", "edit", "apply"], "capabilities": ["tool_use"]},
+        "120b": {"roles": ["chat", "edit", "apply"], "capabilities": ["tool_use"]}
     }
 }
 
@@ -100,7 +103,15 @@ def create_yaml_files(models, version, family=None):
     else:
         models_to_process = models
     for model_name, model_attributes in models_to_process.items():
-        for size, supported_roles in model_attributes.items():
+        for size, model_config in model_attributes.items():
+            # Handle both old format (list) and new format (dict) for backward compatibility
+            if isinstance(model_config, list):
+                supported_roles = model_config
+                capabilities = []
+            else:
+                supported_roles = model_config.get("roles", [])
+                capabilities = model_config.get("capabilities", [])
+            
             yaml_content = f"""---
 name: {model_name.lower()} {size.lower()}
 version: {version}
@@ -113,6 +124,12 @@ models:
 
             for role in supported_roles:
                 yaml_content += f"    - {role.lower()}\n"
+            
+            # Add capabilities section if any capabilities are defined
+            if capabilities:
+                yaml_content += "  capabilities:\n"
+                for capability in capabilities:
+                    yaml_content += f"    - {capability.lower()}\n"
 
             file_path = os.path.join(base_path, f"{model_name.lower()}-{size.lower()}.yaml")
             try:
