@@ -1,12 +1,13 @@
 ---
 name: deepseek-r1 7b
-version: 1.0.6
+version: 1.1.0
 schema: v1
 models:
 - name: deepseek-r1 7b
   provider: ollama
   model: deepseek-r1:7b
   roles:
+    - apply
+    - autocomplete
     - chat
     - edit
-    - apply

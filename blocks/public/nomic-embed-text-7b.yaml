@@ -1,0 +1,10 @@
+---
+name: nomic-embed-text 7b
+version: 1.1.0
+schema: v1
+models:
+- name: nomic-embed-text 7b
+  provider: ollama
+  model: nomic-embed-text:7b
+  roles:
+    - embed

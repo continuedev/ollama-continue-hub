@@ -1,13 +1,13 @@
 ---
 name: autodetect
-version: 0.0.5
+version: 1.1.0
 schema: v1
 models:
 - name: autodetect
   provider: ollama
   model: autodetect
   roles:
-    - chat
-    - edit
     - apply
     - autocomplete
+    - chat
+    - edit

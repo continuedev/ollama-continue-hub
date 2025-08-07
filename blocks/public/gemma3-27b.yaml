@@ -1,12 +1,12 @@
 ---
 name: gemma3 27b
-version: 1.0.6
+version: 1.1.0
 schema: v1
 models:
 - name: gemma3 27b
   provider: ollama
   model: gemma3:27b
   roles:
+    - apply
     - chat
     - edit
-    - apply

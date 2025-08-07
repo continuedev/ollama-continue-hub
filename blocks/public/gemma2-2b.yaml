@@ -1,13 +1,13 @@
 ---
 name: gemma2 2b
-version: 1.0.6
+version: 1.1.0
 schema: v1
 models:
 - name: gemma2 2b
   provider: ollama
   model: gemma2:2b
   roles:
-    - chat
-    - edit
     - apply
     - autocomplete
+    - chat
+    - edit

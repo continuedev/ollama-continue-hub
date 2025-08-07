@@ -1,12 +1,13 @@
 ---
 name: deepcode 1.5b
-version: 1.0.6
+version: 1.1.0
 schema: v1
 models:
 - name: deepcode 1.5b
   provider: ollama
   model: deepcode:1.5b
   roles:
+    - apply
+    - autocomplete
     - chat
     - edit
-    - apply
