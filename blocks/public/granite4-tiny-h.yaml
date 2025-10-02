@@ -1,0 +1,11 @@
+name: granite4 tiny-h
+version: 1.0.6
+schema: v1
+models:
+  - name: granite4 tiny-h
+    provider: ollama
+    model: granite4:tiny-h
+    roles:
+      - chat
+      - edit
+      - apply
